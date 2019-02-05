@@ -1,3 +1,8 @@
-<p>
+<h2>
   Hello {{studentName}}! You rendered your first component!
-</p>
+</h2>
+
+<input [id]="myId" type="text" value="Vishwas">
+<input disabled="false" id="{{myId}}" type="text" value="Disabled">
+<input [disabled]="isDisabled" id="{{myId}}" type="text" value="Disabled">
+<input disabled="{{isDisabled}}" id="{{myId}}" type="text" value="Disabled">

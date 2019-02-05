@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   studentName = 'Mateusz';
-  
+  public myId = "testid";
+  public isDisabled = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  greetUser(){
+    return "Hello " + this.studentName;
   }
 
 }
