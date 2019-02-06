@@ -24,6 +24,10 @@ export class TestComponent implements OnInit {
     fontStyle: "italic"
   }
   public greeting = "";
+  public testField = "";
+
+  public name = "";
+  
 
   constructor() { }
 
@@ -40,6 +44,10 @@ export class TestComponent implements OnInit {
 
   onClickEvent(event) {
     this.greeting = event.type;
+  }
+
+  logMessage(value) {
+    console.log(value);
   }
 
 }

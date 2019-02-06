@@ -21,11 +21,16 @@
 
 <h4 [ngStyle]="titleStyles">Style Binding Three</h4>
 
+<!--
 <button (click)="onClick()">Greet</button>
 
 <button (click)="onClickEvent($event)">Event</button>
 
 <button (click)="greeting='Welcome Matthew'">Hi</button>
-{{greeting}}
+{{greeting}} -->
 
+<input #myInput type="text">
+<button (click)="logMessage(myInput.value)">log</button><br><br>
 
+<input [(ngModel)]="name" type="text"><br>
+{{name}}
