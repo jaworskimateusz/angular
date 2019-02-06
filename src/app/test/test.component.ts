@@ -10,6 +10,21 @@ export class TestComponent implements OnInit {
   studentName = 'Mateusz';
   public myId = "testid";
   public isDisabled = true;
+  public successClass = "text-success";
+  public hasError = true;
+  public isSpecial = true;
+  public messageClasses = {
+    "text-success": !this.hasError,
+    "text-danger": this.hasError,
+    "text-special": this.isSpecial
+  }
+  public highlightColor = "orange";
+  public titleStyles = {
+    color: "blue",
+    fontStyle: "italic"
+  }
+  public greeting = "";
+
   constructor() { }
 
   ngOnInit() {
@@ -17,6 +32,14 @@ export class TestComponent implements OnInit {
 
   greetUser(){
     return "Hello " + this.studentName;
+  }
+
+  onClick() {
+    this.greeting = "First event!";
+  }
+
+  onClickEvent(event) {
+    this.greeting = event.type;
   }
 
 }

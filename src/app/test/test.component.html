@@ -6,3 +6,26 @@
 <input disabled="false" id="{{myId}}" type="text" value="Disabled">
 <input [disabled]="isDisabled" id="{{myId}}" type="text" value="Disabled">
 <input disabled="{{isDisabled}}" id="{{myId}}" type="text" value="Disabled">
+
+<h3 [class]="successClass">Coldevolution</h3>
+
+<h3 [class.text-danger]="hasError">Error</h3>
+
+<h3 [ngClass]="messageClasses">Status</h3>
+
+<h4 [style.color]="hasError ? 'red' : 'green'">Style Binding</h4>
+
+<h4 [style.color]="highlightColor">Style Binding Two</h4>
+
+<h4 style.color="{{highlightColor}}">Style Binding Two v2</h4>
+
+<h4 [ngStyle]="titleStyles">Style Binding Three</h4>
+
+<button (click)="onClick()">Greet</button>
+
+<button (click)="onClickEvent($event)">Event</button>
+
+<button (click)="greeting='Welcome Matthew'">Hi</button>
+{{greeting}}
+
+
