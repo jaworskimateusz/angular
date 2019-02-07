@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 
 @Component({
@@ -32,6 +32,9 @@ export class TestComponent implements OnInit {
   public color = "red";
   public colors = ["red", "blue", "green", "yellow"];
 
+  @Input() public parentData; //@Input('parentData') public parentName;
+  @Output() public childEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -51,6 +54,10 @@ export class TestComponent implements OnInit {
 
   logMessage(value) {
     console.log(value);
+  }
+
+  fireEvent() {
+    this.childEvent.emit("Childreon is on line!");
   }
 
 
