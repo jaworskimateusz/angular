@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-test',
@@ -24,10 +25,12 @@ export class TestComponent implements OnInit {
     fontStyle: "italic"
   }
   public greeting = "";
-  public testField = "";
-
+  public area ="";
+  public count = 100;
   public name = "";
-  
+  public displayName = false;
+  public color = "red";
+  public colors = ["red", "blue", "green", "yellow"];
 
   constructor() { }
 
@@ -49,5 +52,6 @@ export class TestComponent implements OnInit {
   logMessage(value) {
     console.log(value);
   }
+
 
 }

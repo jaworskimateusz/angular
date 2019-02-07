@@ -32,5 +32,35 @@
 <input #myInput type="text">
 <button (click)="logMessage(myInput.value)">log</button><br><br>
 
-<input [(ngModel)]="name" type="text"><br>
-{{name}}
+<!--Two way binding-->
+<textarea [(ngModel)]="area"></textarea>
+<p>Left words: {{count - area.length < 0 ? 0 : count - area.length}}</p>
+
+<!--Structural directives-->
+<h3 *ngIf="displayName; then thenBlock; else elseBlock">
+  Jack! I am in 'if' block.
+</h3>
+<ng-template #thenBlock>
+  <h3>
+    Now I am in then block.
+  </h3>
+</ng-template>
+<ng-template #elseBlock>
+  <h3>
+    Now I am in else block.
+  </h3>
+</ng-template>
+
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">You chose red!</div>
+  <div *ngSwitchCase="'blue'">Now Its blue.</div>
+  <div *ngSwitchCase="'green'">GREENland</div>
+  <div *ngSwitchDefault>Again</div>
+</div>
+
+<div *ngFor="let color of colors">
+  <h5>
+    {{color}}
+  </h5>
+</div>
