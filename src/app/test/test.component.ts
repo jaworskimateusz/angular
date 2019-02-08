@@ -8,7 +8,7 @@ import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 })
 export class TestComponent implements OnInit {
 
-  studentName = 'Mateusz';
+  public studentName = 'Mateusz';
   public myId = "testid";
   public isDisabled = true;
   public successClass = "text-success";
@@ -34,6 +34,8 @@ export class TestComponent implements OnInit {
 
   @Input() public parentData; //@Input('parentData') public parentName;
   @Output() public childEvent = new EventEmitter();
+
+  public date  = new Date();
 
   constructor() { }
 

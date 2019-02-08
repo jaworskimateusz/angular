@@ -69,3 +69,24 @@
 <h1>{{parentData}}</h1>
 
 <button (click)="fireEvent()">Send Event</button>
+
+<!--Pipes-->
+<h3> {{ studentName | lowercase }} </h3>
+<h3> {{ studentName | uppercase }} </h3>
+<h3> {{ studentName | titlecase }} </h3>
+<!--Slice allows us to cut words -->
+<h3> {{ studentName | slice:2:4 }} </h3>
+<h3> {{ titleStyles | json }} </h3>
+
+<h4> {{ 5.678 | number: '1.2-3' }} </h4>
+<h4> {{ 5.678 | number: '3.4-5' }} </h4>
+<h4> {{ 5.678 | number: '3.1-2' }} </h4>
+
+<h4> {{ 0.25 | percent }} </h4>
+<h4> {{ 0.5 | currency: 'GBP' }} </h4>
+
+<h4> {{ date | date: 'short' }} </h4>
+<h4> {{ date | date: 'shortDate' }} </h4>
+<h4> {{ date | date: 'shortTime' }} </h4>
+<h4> {{ date | date: 'longTime' }} </h4>
+
