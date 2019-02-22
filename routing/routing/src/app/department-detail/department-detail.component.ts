@@ -6,8 +6,19 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
   selector: 'app-department-detail',
   template: `
     <h3> You selected department with id = {{departmentId}}</h3>
-    <a (click)="goPrevious()">Previous</a>
-    <a (click)="goNext()">Next</a>
+
+    <p>
+      <button (click)="showOverview()">Overview</button>
+      <button (click)="showContact()">Contact</button>
+    </p>
+    <router-outlet></router-outlet>
+    <p>
+      <button (click)="goPrevious()">Previous</button>
+      <button (click)="goNext()">Next</button>
+    </p>
+    <button>
+      <a (click)="gotoDepartments()" >Back</a>
+    </button>
   `,
   styles: []
 })
@@ -35,6 +46,20 @@ export class DepartmentDetailComponent implements OnInit {
   goNext() {
     let nextId = this.departmentId + 1;
     this.router.navigate(['/departments', nextId]);
+  }
+
+  gotoDepartments() {
+    let selectedId = this.departmentId ? this.departmentId : null;
+    // this is important because if we change url in routes here we will have appropriate path
+    this.router.navigate(['../', {id: selectedId} ], {relativeTo: this.route});
+  }
+
+  showOverview() {
+    this.router.navigate(['overview'], {relativeTo: this.route});
+  }
+
+  showContact() {
+    this.router.navigate(['contact'], {relativeTo: this.route});
   }
 
 }
